@@ -10,7 +10,15 @@ import packageJson from "../package.json";
 
 const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState("variants");
-  const [theme, setTheme] = useState<"light" | "dark">("light");
+  
+  // Initialize theme based on system preference
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const [theme, setTheme] = useState<"light" | "dark">(prefersDark ? "dark" : "light");
+
+  // Set initial theme on component mount
+  React.useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+  }, []);
 
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";

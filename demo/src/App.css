@@ -7,11 +7,8 @@
 .intro {
   font-size: 1.1rem;
   margin-bottom: 2rem;
-  color: #666;
-}
-
-[data-theme="dark"] .intro {
-  color: #aaa;
+  color: var(--text-color);
+  opacity: 0.8;
 }
 
 .section-title {
@@ -28,10 +25,11 @@
 }
 
 .code-preview {
-  background-color: #282c34;
+  background-color: #282c34; /* Keep this dark for code readability */
   border-radius: 8px;
   overflow: hidden;
   margin: 1.5rem 0;
+  border: 1px solid var(--border-color-dark);
 }
 
 .code-preview pre {
@@ -40,12 +38,12 @@
 }
 
 .code-title {
-  background-color: #1e1e1e;
+  background-color: #1e1e1e; /* Keep dark for code readability */
   color: #e6e6e6;
   padding: 0.5rem 1rem;
   font-family: monospace;
   font-size: 0.9rem;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid var(--border-color-dark);
 }
 
 .options-form {
@@ -70,8 +68,8 @@
   padding: 0.5rem;
   border-radius: 4px;
   border: 1px solid var(--border-color);
-  background-color: transparent;
-  color: inherit;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 .checkbox-group {
@@ -89,6 +87,7 @@
   padding: 1rem;
   border-radius: 8px;
   margin-bottom: 1rem;
+  background-color: var(--bg-color);
 }
 
 .toast-preview-title {
@@ -98,11 +97,8 @@
 
 .toast-preview-description {
   font-size: 0.9rem;
-  color: #666;
-}
-
-[data-theme="dark"] .toast-preview-description {
-  color: #aaa;
+  color: var(--text-color);
+  opacity: 0.7;
 }
 
 .version-info {
@@ -111,10 +107,10 @@
   align-items: center;
   justify-content: center;
   margin-top: 1rem;
-  background-color: var(--toast-frost);
+  background-color: var(--border-color);
   padding: 0.5rem;
   border-radius: 8px;
-  box-shadow: var(--toast-shadow);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   font-size: 1.5rem;
   font-weight: 500;
 }
