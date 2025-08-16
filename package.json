@@ -1,0 +1,32 @@
+{
+  "name": "@asafarim/toast",
+  "version": "0.1.0",
+  "description": "Theme-aware toast notification system for ASafariM frontends.",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.cjs.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./react": {
+      "import": "./dist/react.esm.js",
+      "require": "./dist/react.cjs.js",
+      "types": "./dist/react.d.ts"
+    },
+    "./styles.css": "./dist/styles.css"
+  },
+  "sideEffects": ["./src/styles/toast.css"],
+  "files": ["dist"],
+  "peerDependencies": {
+    "react": ">=17.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "tsup": "^7.2.0",
+    "typescript": "^5.0.0",
+    "react": "^18.0.0"
+  }
+}
