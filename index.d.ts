@@ -1,8 +1,9 @@
-
 // React exports
 import React from 'react';
+
 // Core types
 export interface ToastOptions {
+  id?: string;
   position?: ToastPosition;
   durationMs?: number;
   canClose?: boolean;
@@ -10,9 +11,11 @@ export interface ToastOptions {
   icon?: React.ReactNode;
   description?: string;
   ariaLive?: 'polite' | 'assertive';
+  dedupeKey?: string;
+  variant?: ToastVariant;
 }
 
-export type ToastVariant = 'default' | 'success' | 'info' | 'warning' | 'error';
+export type ToastVariant = 'success' | 'info' | 'warning' | 'error' | 'neutral';
 export type ToastPosition = 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left' | 'top-center' | 'bottom-center';
 
 export interface Toast {
@@ -26,6 +29,8 @@ export interface Toast {
   icon?: React.ReactNode;
   description?: string;
   ariaLive: 'polite' | 'assertive';
+  dedupeKey?: string;
+  createdAt: number;
 }
 
 // Vanilla exports
@@ -37,6 +42,7 @@ export const toast: {
   error: (message: string, opts?: ToastOptions) => string;
   clear: () => void;
   remove: (id: string) => void;
+  getToasts: () => Toast[];
 };
 
 export interface ToastProviderProps {

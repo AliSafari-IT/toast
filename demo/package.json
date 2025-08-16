@@ -1,7 +1,7 @@
 {
   "name": "toast-demo",
   "private": true,
-  "version": "1.1.0",
+  "version": "1.2.0",
   "type": "module",
   "scripts": {
     "dev": "kill-port 3010 && vite",
@@ -11,7 +11,7 @@
     "predeploy": "pnpm run build"
   },
   "dependencies": {
-    "@asafarim/toast": "file:..",
+    "@asafarim/toast": "link:..",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-syntax-highlighter": "^15.5.0"

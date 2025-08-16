@@ -1,5 +1,5 @@
 import React from 'react';
-import { useToast } from '../../../src';
+import { useToast } from '@asafarim/toast';
 
 const VariantsDemo: React.FC = () => {
   const toast = useToast();

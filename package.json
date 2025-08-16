@@ -1,10 +1,11 @@
 {
   "name": "@asafarim/toast",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "React toast notification system for ASafariM frontends.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
+  "private": true,
   "scripts": {
     "build": "tsup",
     "prepublishOnly": "pnpm run build",
@@ -14,6 +15,7 @@
   },
   "exports": {
     ".": {
+      "types": "./index.d.ts",
       "import": "./dist/index.mjs",
       "require": "./dist/index.js"
     },
@@ -26,6 +28,7 @@
     "dist",
     "demo",
     "README.md",
+    "package.json",
     "LICENSE"
   ],
   "peerDependencies": {

@@ -1,6 +1,5 @@
 import React from 'react';
-import { useToast } from '../../../src';
-import type { ToastPosition } from '../../../src/core/types';
+import { useToast, ToastPosition } from '@asafarim/toast';
 
 const PositionsDemo: React.FC = () => {
   const toast = useToast();

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { ToastProvider, Toaster } from "../../src";
-import "../../src/styles/toast.css";
+import { ToastProvider, Toaster } from "@asafarim/toast";
+import "@asafarim/toast/styles.css";
 import "./App.css";
 import VariantsDemo from "./components/VariantsDemo";
 import PositionsDemo from "./components/PositionsDemo";
 import OptionsDemo from "./components/OptionsDemo";
 import CodeExample from "./components/CodeExample";
-import packageJson from "../../package.json";
+import packageJson from "../package.json";
 
 const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState("variants");

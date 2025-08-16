@@ -7,7 +7,7 @@ export default defineConfig({
     'react-ts': 'src/react-ts/index.ts'
   },
   format: ['esm', 'cjs'],
-  dts: false,
+  dts: true,
   splitting: false,
   sourcemap: true,
   clean: true,
