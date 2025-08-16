@@ -17,5 +17,5 @@
     "baseUrl": "./src"
   },
   "include": ["src"],
-  "exclude": ["dist", "node_modules"]
+  "exclude": ["dist", "node_modules", "src/react.d.ts"]
 }

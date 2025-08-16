@@ -54,11 +54,14 @@ class ToastStore {
       }
     }
     if (this.toasts.length < this.maxVisible) {
-      this.toasts.push(toast);
+      this.toasts = [...this.toasts, toast]; // Create a new array to ensure state update
     } else {
-      this.queue.push(toast);
+      this.queue = [...this.queue, toast]; // Create a new array to ensure state update
     }
-    this.notify();
+    
+    // Ensure notification happens after state update
+    setTimeout(() => this.notify(), 0);
+    
     if (durationMs > 0) {
       setTimeout(() => this.remove(id), durationMs);
     }
@@ -68,15 +71,18 @@ class ToastStore {
   remove(id: string) {
     this.toasts = this.toasts.filter(t => t.id !== id);
     if (this.queue.length > 0 && this.toasts.length < this.maxVisible) {
-      this.toasts.push(this.queue.shift()!);
+      const nextToast = this.queue.shift()!;
+      this.toasts = [...this.toasts, nextToast];
     }
-    this.notify();
+    // Ensure notification happens after state update
+    setTimeout(() => this.notify(), 0);
   }
 
   clear() {
     this.toasts = [];
     this.queue = [];
-    this.notify();
+    // Ensure notification happens after state update
+    setTimeout(() => this.notify(), 0);
   }
 
   setMaxVisible(n: number) {

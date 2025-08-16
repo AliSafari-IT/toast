@@ -1,4 +1,3 @@
-import React from 'react';
 import { useToast } from './ToastProvider';
 import type { Toast } from '../core/types';
 import '../styles/toast.css';
@@ -27,12 +26,11 @@ function getIcon(variant: Toast['variant']) {
   }
 }
 
-export const Toaster: React.FC = () => {
+export const Toaster = () => {
   const { toasts, remove } = useToast();
   if (!toasts.length) return null;
   // Group by position
   const grouped: Record<string, Toast[]> = {};
-  toasts.forEach(t => {
   toasts.forEach((t: Toast) => {
     grouped[t.position] = grouped[t.position] || [];
     grouped[t.position].push(t);
@@ -64,13 +62,13 @@ export const Toaster: React.FC = () => {
                 <div className="toast-title">{toast.message}</div>
                 {toast.description && <div className="toast-desc">{toast.description}</div>}
               </div>
-              {list.map((toast: Toast) => (
+              {toast.canClose && (
                 <button
                   className="toast-close"
                   aria-label="Close notification"
                   tabIndex={0}
                   onClick={() => remove(toast.id)}
-                  onKeyDown={e => {
+                  onKeyDown={(e: React.KeyboardEvent) => {
                     if (e.key === 'Escape') remove(toast.id);
                   }}
                 >

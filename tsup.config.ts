@@ -1,15 +1,13 @@
 import { defineConfig } from 'tsup';
 
 export default defineConfig({
-  entry: [
-    'src/index.ts',
-    'src/react/ToastProvider.tsx',
-    'src/react/useToast.ts',
-    'src/react/Toaster.tsx',
-    'src/styles/toast.css'
-  ],
+  tsconfig: './tsconfig.build.json',
+  entry: {
+    'index': 'src/index.ts',
+    'react-ts': 'src/react-ts/index.ts'
+  },
   format: ['esm', 'cjs'],
-  dts: true,
+  dts: false,
   splitting: false,
   sourcemap: true,
   clean: true,
@@ -18,8 +16,9 @@ export default defineConfig({
   external: ['react'],
   shims: false,
   skipNodeModulesBundle: true,
-  bundle: false,
+  bundle: true,
   loader: {
-    '.css': 'file'
-  }
+    '.css': 'copy'
+  },
+  onSuccess: 'cp src/styles/toast.css dist/styles.css'
 });

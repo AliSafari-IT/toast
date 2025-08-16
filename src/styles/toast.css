@@ -1,26 +1,46 @@
-@import '@asafarim/shared-tokens/tokens.css';
-
 :root {
-  --toast-radius: var(--radius-md, 12px);
-  --toast-shadow: var(--shadow-lg, 0 4px 24px rgba(0,0,0,0.12));
-  --toast-font: var(--font-sans, 'Inter', sans-serif);
+  --toast-radius: 12px;
+  --toast-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  --toast-font: 'Inter', system-ui, -apple-system, sans-serif;
   --toast-z: 9999;
   --toast-width: 320px;
   --toast-padding: 1rem;
   --toast-gap: 0.5rem;
   --toast-frost: rgba(255,255,255,0.7);
   --toast-frost-dark: rgba(30,30,30,0.7);
-  --toast-border: 1px solid var(--border-color, #e0e0e0);
+  --toast-border: 1px solid #e0e0e0;
   --toast-close-size: 1.5rem;
   --toast-icon-size: 1.25rem;
   --toast-font-size: 1rem;
   --toast-desc-size: 0.92rem;
   --toast-anim: cubic-bezier(0.4,0.2,0.2,1);
+  
+  /* Toast colors */
+  --toast-success-color: #22c55e;
+  --toast-success-bg: #e6fbe6;
+  --toast-info-color: #3b82f6;
+  --toast-info-bg: #e6f0fb;
+  --toast-warning-color: #f59e42;
+  --toast-warning-bg: #fffbe6;
+  --toast-error-color: #ef4444;
+  --toast-error-bg: #fde6e6;
+  --toast-neutral-color: #a3a3a3;
+  --toast-neutral-bg: #f3f3f3;
+  --toast-text-color: #222;
+  --toast-text-muted: #666;
+  --toast-focus-color: #3b82f6;
 }
 
 [data-theme="dark"] {
   --toast-frost: var(--toast-frost-dark);
-  --toast-border: 1px solid var(--border-color-dark, #333);
+  --toast-border: 1px solid #333;
+  --toast-text-color: #e0e0e0;
+  --toast-text-muted: #a0a0a0;
+  --toast-success-bg: rgba(34, 197, 94, 0.2);
+  --toast-info-bg: rgba(59, 130, 246, 0.2);
+  --toast-warning-bg: rgba(245, 158, 66, 0.2);
+  --toast-error-bg: rgba(239, 68, 68, 0.2);
+  --toast-neutral-bg: rgba(163, 163, 163, 0.2);
 }
 
 .toast-container {
@@ -41,7 +61,7 @@
   border: var(--toast-border);
   font-family: var(--toast-font);
   font-size: var(--toast-font-size);
-  color: var(--text-color, #222);
+  color: var(--toast-text-color);
   display: flex;
   align-items: flex-start;
   gap: 0.75rem;
@@ -59,24 +79,24 @@
 }
 
 .toast.success {
-  border-left: 4px solid var(--success-color, #22c55e);
-  background: linear-gradient(90deg, var(--success-bg, #e6fbe6), var(--toast-frost));
+  border-left: 4px solid var(--toast-success-color);
+  background: linear-gradient(90deg, var(--toast-success-bg), var(--toast-frost));
 }
 .toast.info {
-  border-left: 4px solid var(--info-color, #3b82f6);
-  background: linear-gradient(90deg, var(--info-bg, #e6f0fb), var(--toast-frost));
+  border-left: 4px solid var(--toast-info-color);
+  background: linear-gradient(90deg, var(--toast-info-bg), var(--toast-frost));
 }
 .toast.warning {
-  border-left: 4px solid var(--warning-color, #f59e42);
-  background: linear-gradient(90deg, var(--warning-bg, #fffbe6), var(--toast-frost));
+  border-left: 4px solid var(--toast-warning-color);
+  background: linear-gradient(90deg, var(--toast-warning-bg), var(--toast-frost));
 }
 .toast.error {
-  border-left: 4px solid var(--error-color, #ef4444);
-  background: linear-gradient(90deg, var(--error-bg, #fde6e6), var(--toast-frost));
+  border-left: 4px solid var(--toast-error-color);
+  background: linear-gradient(90deg, var(--toast-error-bg), var(--toast-frost));
 }
 .toast.neutral {
-  border-left: 4px solid var(--neutral-color, #a3a3a3);
-  background: linear-gradient(90deg, var(--neutral-bg, #f3f3f3), var(--toast-frost));
+  border-left: 4px solid var(--toast-neutral-color);
+  background: linear-gradient(90deg, var(--toast-neutral-bg), var(--toast-frost));
 }
 
 .toast-icon {
@@ -98,7 +118,7 @@
 }
 .toast-desc {
   font-size: var(--toast-desc-size);
-  color: var(--text-muted, #666);
+  color: var(--toast-text-muted);
   margin-top: 2px;
   white-space: nowrap;
   overflow: hidden;
@@ -107,7 +127,7 @@
 .toast-close {
   background: none;
   border: none;
-  color: var(--text-muted, #888);
+  color: var(--toast-text-muted);
   font-size: var(--toast-close-size);
   cursor: pointer;
   margin-left: 0.5rem;
@@ -116,7 +136,7 @@
   transition: opacity 0.2s;
 }
 .toast-close:focus {
-  outline: 2px solid var(--focus-color, #3b82f6);
+  outline: 2px solid var(--toast-focus-color);
   opacity: 1;
 }
 .toast-close:hover {

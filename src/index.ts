@@ -1,2 +1,2 @@
 export * from './core/types';
-export * from './vanilla/toast';
+export * from './react-ts';

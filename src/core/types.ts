@@ -7,6 +7,7 @@ export type ToastPosition =
   | 'top-center'
   | 'bottom-center';
 
+export interface ToastOptions {
   id?: string;
   description?: string;
   durationMs?: number; // default 3000
@@ -14,11 +15,12 @@ export type ToastPosition =
   canClose?: boolean; // default true
   ariaLive?: 'polite' | 'assertive'; // default based on variant
   persist?: boolean; // if true, no auto-dismiss
-  icon?: string | any; // Use string for vanilla, any for React
+  icon?: any; // React component or element
   dedupeKey?: string;
   variant?: ToastVariant;
 }
 
+export interface Toast {
   id: string;
   message: string;
   description?: string;
@@ -28,7 +30,7 @@ export type ToastPosition =
   canClose: boolean;
   ariaLive: 'polite' | 'assertive';
   persist: boolean;
-  icon?: string | any;
+  icon?: any; // React component or element
   dedupeKey?: string;
   createdAt: number;
 }
