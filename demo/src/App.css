@@ -104,3 +104,36 @@
 [data-theme="dark"] .toast-preview-description {
   color: #aaa;
 }
+
+.version-info {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  background-color: var(--toast-frost);
+  padding: 0.5rem;
+  border-radius: 8px;
+  box-shadow: var(--toast-shadow);
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.version-info a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.version-info a:hover {
+  text-decoration: underline;
+}
+
+.version {
+  font-size: 1.15rem;
+}
+
+.github-link,
+.npm-link {
+  font-size: 1.15rem;
+}
+

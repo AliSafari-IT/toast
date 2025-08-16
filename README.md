@@ -2,6 +2,16 @@
 
 A lightweight, theme-aware toast notification system for React applications with a simple programmatic API and optional vanilla JavaScript adapter.
 
+## Links & Info
+
+[![npm version](https://img.shields.io/npm/v/@asafarim/toast.svg)](https://www.npmjs.com/package/@asafarim/toast)
+[![GitHub](https://img.shields.io/github/stars/AliSafari-IT/toast?style=social)](https://github.com/AliSafari-IT/toast)
+
+- **Version**: 1.1.0
+- **GitHub**: [github.com/AliSafari-IT/toast](https://github.com/AliSafari-IT/toast)
+- **npm**: [npmjs.com/package/@asafarim/toast](https://www.npmjs.com/package/@asafarim/toast)
+- **Demo**: [alisafari-it.github.io/toast](https://alisafari-it.github.io/toast/)
+
 ## Features
 
 - Theme-aware UI (light/dark mode support)
